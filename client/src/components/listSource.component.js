@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import request from 'request';
 import { Link } from 'react-router-dom';
 
-const uri = 'https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source'
+const uri = 'http://localhost:3000/source'
+//remote: https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/
+//local: http://localhost:3000/source
 
 export default class ListSource extends Component {
     

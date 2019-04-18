@@ -3,7 +3,9 @@ import request from 'request';
 import SourceDetails from './sourceDetails.component'
 import MessageStatusAggregates from './messageStatusAggregates.component'
 
-const uri = 'https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/'
+const uri = 'http://localhost:3000/source'
+//remote: https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/
+//local: http://localhost:3000/source
 
 export default class ViewSource extends Component {
     
