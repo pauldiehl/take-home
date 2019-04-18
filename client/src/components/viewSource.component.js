@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import request from 'request';
+import SourceDetails from './sourceDetails.component'
+import MessageStatusAggregates from './messageStatusAggregates.component'
 
 const uri = 'https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/'
 
@@ -94,15 +96,17 @@ export default class ViewSource extends Component {
     render() {
         return (
             <div>
-                <h1>Source Detail</h1>
-                <p>Source Name: {this.state['name']} </p>
-                <p>Source Environment: {this.state['environment']} </p>
-                <p>Source Encoding: {this.state['encoding']} </p>
-                <h1>Message Status Aggregates</h1>
-                <p>Total Error: {this.state['errorCount']} </p>
-                <p>Total Enqueued: {this.state['enqueuedCount']} </p>
-                <p>Total Processing: {this.state['processingCount']} </p>
-                <p>Total Finished: {this.state['finishedCount']} </p>
+                <SourceDetails 
+                    name={this.state['name']}
+                    environment={this.state['environment']}
+                    encoding= {this.state['encoding']}
+                />
+                <MessageStatusAggregates
+                    errorCount={this.state['errorCount']}
+                    enqueuedCount={this.state['enqueuedCount']}
+                    processingCount={this.state['processingCount']}
+                    finishedCount={this.state['finishedCount']} 
+                />
                 <h1>Message List:  </h1>
                 { this.addMessageList() }
             </div>
