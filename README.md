@@ -32,7 +32,7 @@ curl localhost:3000/message/23fc65c2-29bf-4208-85ec-b54629b76bc1
 4) open browser to localhost:8080
 
 ## LIVE DEMO
-###S3 URL: 
+### S3 URL: 
 http://redox-take-home-app.s3-website-us-east-1.amazonaws.com/
 
 ### APIG URLs:
