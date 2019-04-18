@@ -1,0 +1,75 @@
+service: redox-serverless-rest-api
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  listSource:
+    handler: lambda/source-list.handler
+    events:
+      - http:
+          path: source
+          method: get
+          cors: true
+
+  getSource:
+    handler: lambda/source-view.handler
+    events:
+      - http:
+          path: source/{id}
+          method: get
+          cors: true
+
+  createSource:
+    handler: lambda/source-create.handler
+    events:
+      - http:
+          path: source
+          method: post
+          cors: true
+
+
+  updateSource:
+    handler: lambda/source-update.handler
+    events:
+      - http:
+          path: source/{id}
+          method: put
+          cors: true
+
+  deleteSource:
+    handler: lambda/source-delete.handler
+    events:
+      - http:
+          path: source/{id}
+          method: delete
+          cors: true
+
+  listMessage:
+    handler: lambda/message-list.handler
+    events:
+      - http:
+          path: message
+          method: get
+          cors: true
+
+  getMessage:
+    handler: lambda/message-view.handler
+    events:
+      - http:
+          path: message/{id}
+          method: get
+          cors: true
+
+  getMessageBySource:
+    handler: lambda/message-by-source.handler
+    events:
+      - http:
+          path: source/{id}/message
+          method: get
+          cors: true
+    
