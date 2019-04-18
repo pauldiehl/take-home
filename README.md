@@ -1,45 +1,37 @@
-# Take-Home - SPA
+# INSTRUCTIONS TO RUN:
 
-## Getting things up and running
+## LOCAL
 
-- Clone or [fork](https://help.github.com/en/articles/fork-a-repo) this repoistory
-  - ```git clone git@github.com:100health/take-home.git```
+### SET-UP
+1) clone project
+2) Install and Run Node 8 (mac/linux: nvm use 8)
+3) Install serverless globally (npm install serverless -g)
 
-- Use tools of your choice to interact with the SQLite database (`db.sqlite`)
-    - The database consists of only two tables: `source` and `message`
-
-## Take Home Assessment
-You are working with a complicated network of nodes that send messages between each other. One common type of node in this network is a source who will generate messages to be transmitted to another node on the network. You need the create a view or series of views that allows a user to view a particular source and its messages. This is a highly simplified version of what the Redox engine dashboard current does.
-
-Your take home assessment will be to create a front end application and supporting backend API to fetch and view the sources and messages in the network. There is a repo that will serve as a starting point that contains all the data to use as mock data for sources and message.
-
-### Backend API 
-Given this data create a backend API that will be able to.
-
-1) Fetch all sources and their basic information
-2) Fetch a single source’s information in greater details
-3) Fetch all messages for a single source
-4) Ability to CRUD source information
-
-Here is the basic API backend route structure we want to see:  
+### RUN & TEST BACKEND
+1) cd api
+2) npm install
+3) (RUN TESTS) npm test
+4) (START LOCAL API): sls offline start
+5) (HIT API): 
 ```
-    localhost:8888/source  
-    localhost:8888/source/:id
-    localhost:8888/source/:id/message
-    localhost:8888/message
-    localhost:8888/message/:mid
+curl localhost:3000/source
+curl localhost:3000/source/80fe6e1e-6f1b-4b3c-957c-275d12bb3e48
+curl -X POST localhost:3000/source --data '{ "name": "henry", "environment":"hoops", "encoding":"yik" }'
+curl -X PUT localhost:3000/source/bd5ab29c-af66-44c0-b2e9-f36eee05af97 --data '{ "name": "bob", "environment":"hoops2", "encoding":"yikes" }'
+curl -X DELETE localhost:3000/source/ae6218b0-6116-11e9-9bb7-75218fd118fe
+curl localhost:3000/source/80fe6e1e-6f1b-4b3c-957c-275d12bb3e48/message
+curl localhost:3000/source/80fe6e1e-6f1b-4b3c-957c-275d12bb3e48/message/statusAggregate
+curl localhost:3000/message
+curl localhost:3000/message/23fc65c2-29bf-4208-85ec-b54629b76bc1
 ```
 
-### Given this API create a front end view that…
-1) Allow a user to view all sources
-2) Allows a user to view a single source 
-   - With more details about the source
-   - All the messages for that source
-   - An element that displays the aggreate status of messages for a particular source (error, enqueued, finished, processing).
+### RUN FRONTEND
+1) cd client
+2) npm install
+3) npm start
+4) open browser to localhost:8080
 
-The expected time commitment for this activity is around 5-10 hours. If you find yourself getting far beyond this number, stop, commit what you have, and we can pick it up from there. If you have any questions or suggested improvements, reach out!
+## LIVE DEMO
+S3 URL: TBD
 
-### Submission 
-
-1) Send us a link to the forked repo on your personal GitHub account.
-2) Zip/Tar the contents of your final project directory and send it to us via a Dropbox or Google Drive link.  
+APIG URL: TBD
