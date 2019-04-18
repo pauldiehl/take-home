@@ -1,7 +1,7 @@
-Work Breakdown Plan
+# Work Breakdown Plan
 
-REQUIREMENTS:
-Backend: Endpoints -> Methods
+## REQUIREMENTS:
+### Backend: Endpoints -> Methods
 - GET localhost:8888/source -> sourceList
 - GET localhost:8888/source/:id -> sourceView
 - GET localhost:8888/source/:id/message -> messageBySource (should sort data by updated)
@@ -12,16 +12,14 @@ Backend: Endpoints -> Methods
 - GET localhost:8888/message -> messageList
 - GET localhost:8888/message/:mid -> messageView
 
-
-Frontend: views
+### Frontend: views
 - ListSource - Allow a user to view all sources (GET localhost:8888/source )
 - ViewSource - Allows a user to view a single source with:
 a) details, b) all messages, c) aggregate message status 
 (GET localhost:8888/source/:id & GET localhost:8888/source/:id/message)
 
-
-DESIGN DECISIONS:
-Backend:
+## DESIGN DECISIONS:
+### Backend:
 - Platform = AWS: Highly availability (performs/reliable), elastic (scales), Pay-As-You-Go (cheap), Native Cloud Services (low maintenance), Infrastructue as Code (transparent)
 - API Service = API Gateway: Native cloud service -> Simple set-up, configuration lives in single documentation (no need for code)  (With Express.js, I would need to manage (1) code, (2) underlying server(s) and (3) configuration to scale servers)
 - Compute Service = Lambda Functions: Native cloud service -> Simple set-up, permits direct testing and nothing else
@@ -32,15 +30,15 @@ Backend:
 - TDD assertion library = Chai
 - Mocking Libraries = Lambda-Tester (for Lambdas)
 
-Frontend:
+### Frontend:
 - UI Library = ReactJS: Reusable components and Fast rendering with Virtual DOM (on state changes, React only changes UI that need changing)
 - Starter Pack = Create-React-App: quickly build react app, webpack/babel is preconfigured and hidden
 - Routing = React-Router: Simple routing tool
 - Environment: Cloud9 IDE
 - Testing: React-Testing-Library (https://github.com/kentcdodds/react-testing-library)
 
-CONSTRUCTION:
-Backend:
+## CONSTRUCTION:
+### Backend:
 - Created and tested SQL queries on database (DB Browser for SQLite)
 - Initialized serverless project
 - Installed dependendencies: sqlite3, sqlite-json, uuid
@@ -53,7 +51,7 @@ Backend:
 - Refactored out potential repeat sections to /utility
 - With tests running (happy paths and invalid data tests), created API endpoints on 'serverless.yml'
 
-Frontend:
+### Frontend:
 - Designed 2 views: listSource and viewSource
 - Created create-react-app project (npx create-react-app client)
 - Installed react-router
