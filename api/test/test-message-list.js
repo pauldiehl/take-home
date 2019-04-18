@@ -6,7 +6,7 @@ const ListMessage = require('../lambda/message-list')
 
 describe('GET /message ::', () => {
     
-    it('Successfully lists messages ::', () => {
+    it('should successfully lists messages ::', () => {
      
         return LambdaTester(ListMessage.handler)
             .expectResult(result => {

@@ -12,7 +12,10 @@ export default class ViewSource extends Component {
           name: '',
           environment: '',
           encoding:'',
-          status: '',
+          errorCount: '',
+          enqueuedCount: '',
+          processingCount: '',
+          finishedCount: '',
           messages: []
         }
     }
@@ -22,12 +25,15 @@ export default class ViewSource extends Component {
             if (error) {
                 console.log(error)
             } else {
-                const obj = JSON.parse(body)[0]
+                const src = JSON.parse(body)[0]
                 this.setState({
-                    name: obj['name'],
-                    environment: obj['environment'],
-                    encoding: obj['encoding'],
-                    status: this.state['status'],
+                    name: src['name'],
+                    environment: src['environment'],
+                    encoding: src['encoding'],
+                    errorCount: this.state.errorCount,
+                    enqueuedCount: this.state.enqueuedCount,
+                    processingCount: this.state.processingCount,
+                    finishedCount: this.state.finishedCount,
                     messages: this.state.messages
                 })
             }
@@ -38,21 +44,42 @@ export default class ViewSource extends Component {
                 console.log(error)
             }
             else {
-                const obj = JSON.parse(body)
- 
+                const messages = JSON.parse(body)
                 this.setState(
                     {
                         name: this.state.name,
                         environment: this.state.environment,
                         encoding: this.state['encoding'],
-                        status: obj[0] ? obj[0]['status'] : '',
-                        messages: obj,
+                        errorCount: this.state.errorCount,
+                        enqueuedCount: this.state.enqueuedCount,
+                        processingCount: this.state.processingCount,
+                        finishedCount: this.state.finishedCount,
+                        messages: messages,
                     }
                 )
-
             }
-        })
-        );
+        }))
+        .pipe(
+            request.get(uri + this.props.match.params.id + '/message/statusAggregate', (error, response, body) => {
+            if (error) {
+                console.log(error)
+            }
+            else {
+                const aggregates = JSON.parse(body)[0]
+                this.setState(
+                    {
+                        name: this.state.name,
+                        environment: this.state.environment,
+                        encoding: this.state['encoding'],
+                        errorCount: aggregates.errorCount,
+                        enqueuedCount: aggregates.enqueuedCount,
+                        processingCount: aggregates.processingCount,
+                        finishedCount: aggregates.finishedCount,
+                        messages: this.state.messages,
+                    }
+                )
+            }
+        }))
     }
     
     addMessageList() {
@@ -71,8 +98,12 @@ export default class ViewSource extends Component {
                 <p>Source Name: {this.state['name']} </p>
                 <p>Source Environment: {this.state['environment']} </p>
                 <p>Source Encoding: {this.state['encoding']} </p>
-                <p>Current Message Status: {this.state['status']} </p>
-                <p>Message List:  </p>
+                <h1>Message Status Aggregates</h1>
+                <p>Total Error: {this.state['errorCount']} </p>
+                <p>Total Enqueued: {this.state['enqueuedCount']} </p>
+                <p>Total Processing: {this.state['processingCount']} </p>
+                <p>Total Finished: {this.state['finishedCount']} </p>
+                <h1>Message List:  </h1>
                 { this.addMessageList() }
             </div>
         )

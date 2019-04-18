@@ -72,4 +72,12 @@ functions:
           path: source/{id}/message
           method: get
           cors: true
+  
+  getAggregateStatusOfMessages:
+    handler: lambda/message-status-aggregate.handler
+    events:
+      - http:
+          path: source/{id}/message/statusAggregate
+          method: get
+          cors: true
     

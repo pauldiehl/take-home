@@ -6,19 +6,19 @@ const MessageBySource = require('../lambda/message-by-source')
 
 describe('GET /source/:id/message ::', () => {
     
-    it('Fails to validate data ::', () => {
+    it('should fail to validate data ::', () => {
         let testEvent = { 'pathParameters' : { 'id' : 0 } }
         
         return LambdaTester(MessageBySource.handler)
             .event(testEvent)
             .expectError(result => {
-                console.log(':: error ::', result)
+                console.log(':: error ::', result.body)
                 assert.equal(result.body, 'Invalid type set')
                 assert.equal(result.statusCode, 400)
             })
     })
     
-    it('Successfully view messages by source id ::', () => {
+    it('should successfully view messages by source id ::', () => {
         let testEvent = { 'pathParameters' : { 'id' : 'f7516443-c498-4493-9acc-c854ca2e873a' } }
         
         return LambdaTester(MessageBySource.handler)

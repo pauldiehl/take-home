@@ -10,17 +10,17 @@ const execution = require('../utility/execution')
 
 exports.handler = (event, context, callback) => {
   
-  const data = event['pathParameters']['id']
-  console.log('input data: ' + data)
+  const id = event['pathParameters']['id']
+  console.log('input id: ' + id)
   
   // Validate data types
-  if (typeof data !== 'string') {
+  if (typeof id !== 'string') {
     validationCallback(callback)
     return
   }
   
   //Construct db query
-  const sqlStmt = 'SELECT id, message, status FROM message WHERE source_id = "' + data + '" ORDER BY updated_at DESC'
+  const sqlStmt = 'SELECT id, message, status FROM message WHERE source_id = "' + id + '" ORDER BY updated_at DESC'
   console.log('query to execute: ' + sqlStmt)
   
   //Execute query
