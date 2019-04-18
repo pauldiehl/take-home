@@ -32,6 +32,16 @@ curl localhost:3000/message/23fc65c2-29bf-4208-85ec-b54629b76bc1
 4) open browser to localhost:8080
 
 ## LIVE DEMO
-S3 URL: TBD
+###S3 URL: 
+http://redox-take-home-app.s3-website-us-east-1.amazonaws.com/
 
-APIG URL: TBD
+### APIG URLs:
+  - GET - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source
+  - GET - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/{id}
+  - POST - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source
+  - PUT - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/{id}
+  - DELETE - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/{id}
+  - GET - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/message
+  - GET - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/message/{id}
+  - GET - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/{id}/message
+  - GET - https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/{id}/message/statusAggregate
