@@ -29,7 +29,7 @@ curl localhost:3000/message/23fc65c2-29bf-4208-85ec-b54629b76bc1
 1) cd client
 2) npm install
 3) npm start
-4) open browser to localhost:8080
+4) open browser to localhost:3001
 
 ## LIVE DEMO
 ### S3 URL: 
