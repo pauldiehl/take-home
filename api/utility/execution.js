@@ -1,4 +1,9 @@
-module.exports = (exporter, sqlStmt, callback) => {
+const sqliteJson = require('sqlite-json');
+const sqlite3 = require('sqlite3');
+let db = new sqlite3.Database('db.sqlite');
+const exporter = sqliteJson(db);
+
+module.exports = (sqlStmt, callback) => {
     exporter.json(sqlStmt, (err, results) => {
     if (err) {
       console.error(err)

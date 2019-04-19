@@ -1,10 +1,5 @@
 'use strict';
 
-const sqliteJson = require('sqlite-json');
-const sqlite3 = require('sqlite3');
-let db = new sqlite3.Database('db.sqlite');
-const exporter = sqliteJson(db);
-
 const execution = require('../utility/execution')
 
 exports.handler = (event, context, callback) => {
@@ -15,6 +10,6 @@ exports.handler = (event, context, callback) => {
   console.log(sqlStmt)
   
   //Execute query
-  execution(exporter, sqlStmt, callback)
+  execution(sqlStmt, callback)
     
 };

@@ -1,10 +1,6 @@
 'use strict';
 
 const uuid = require('uuid');
-const sqliteJson = require('sqlite-json');
-const sqlite3 = require('sqlite3');
-let db = new sqlite3.Database('db.sqlite');
-const exporter = sqliteJson(db);
 
 const validationCallback = require('../utility/validation')
 const execution = require('../utility/execution')
@@ -12,7 +8,6 @@ const execution = require('../utility/execution')
 exports.handler = (event, context, callback) => {
   
   const data = JSON.parse(event.body)
-  
   console.log('input data: ' + event.body)
   
   // Validate data types
@@ -32,6 +27,6 @@ exports.handler = (event, context, callback) => {
   console.log('query to execute: ' + sqlStmt)
   
   //Execute query
-  execution(exporter, sqlStmt, callback)
+  execution(sqlStmt, callback)
     
 };
