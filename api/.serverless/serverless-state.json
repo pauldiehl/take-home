@@ -213,7 +213,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-listSource",
               "Handler": "lambda/source-list.handler",
@@ -232,14 +232,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ListSourceLambdaVersionTFBYOAmG1rTk36OcPY3uJpBhsa6CM2eItqxgweSSM": {
+          "ListSourceLambdaVersionjNcJNBrBG0ws61ryiHMYUkWoWWcZ6PE0gw04jBswTIg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListSourceLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "GetSourceLambdaFunction": {
@@ -249,7 +249,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-getSource",
               "Handler": "lambda/source-view.handler",
@@ -268,14 +268,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetSourceLambdaVersioniB0TvqrtZydbUGx2WKsqWa1VyyR8TgXoskMzmkuPLc": {
+          "GetSourceLambdaVersionAq5BsgMxsFlEcRqtZ5O7wR5bb8dHqMAH0j7cofHI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetSourceLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "CreateSourceLambdaFunction": {
@@ -285,7 +285,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-createSource",
               "Handler": "lambda/source-create.handler",
@@ -304,14 +304,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateSourceLambdaVersion7X5nmuvyNwJEaQscRfrNCwnWTonYVqV1IytIqBVc": {
+          "CreateSourceLambdaVersion2GonoYV2VVUhKDk87aUNt79aPJaDvmen7hsZILNvu4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateSourceLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "UpdateSourceLambdaFunction": {
@@ -321,7 +321,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-updateSource",
               "Handler": "lambda/source-update.handler",
@@ -340,14 +340,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdateSourceLambdaVersionLPEeWW5u0hmzkf9qeJQ5RgEoTvmRvAOiSCgYmOkNKY": {
+          "UpdateSourceLambdaVersionFenH8bqqzyJ87oQ7acaSxqdjxqsOs8gyWnDAP6EBM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateSourceLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "DeleteSourceLambdaFunction": {
@@ -357,7 +357,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-deleteSource",
               "Handler": "lambda/source-delete.handler",
@@ -376,14 +376,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DeleteSourceLambdaVersion7d5KiaDDo77ahUM3RAMc6DvR0gbH2yk9PuzhDv8zwI": {
+          "DeleteSourceLambdaVersion0GOVj1dAlWGyYhSN5M700yZRqAUvamfVYpcH6lZ9E8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteSourceLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "ListMessageLambdaFunction": {
@@ -393,7 +393,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-listMessage",
               "Handler": "lambda/message-list.handler",
@@ -412,14 +412,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ListMessageLambdaVersionW5Z7eKqmYGc1FWVwdleFZn7YPKwozIQTS8btS1GNxDM": {
+          "ListMessageLambdaVersionGZGRU3iwzJgE160FhlonTsFg0LoavC5JVn4q49NCkM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListMessageLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "GetMessageLambdaFunction": {
@@ -429,7 +429,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-getMessage",
               "Handler": "lambda/message-view.handler",
@@ -448,14 +448,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetMessageLambdaVersionWxtnUhYEdlPfEKaXJvYUba8SfEYcoFRzhw5YX1Yrw": {
+          "GetMessageLambdaVersionLSkhet0g6SuwkdW5tCEQ2JEGmeH6NP82DSJ3gN1YJ0U": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetMessageLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "GetMessageBySourceLambdaFunction": {
@@ -465,7 +465,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-getMessageBySource",
               "Handler": "lambda/message-by-source.handler",
@@ -484,14 +484,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetMessageBySourceLambdaVersionOtbXsmJaFhaD3c1rvcseMSRP4jdsNvfk067ysVYi5N8": {
+          "GetMessageBySourceLambdaVersionzoxVgPrZUcCk98DTse767PnSmcLrPtjmMAJkmBH7hhg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetMessageBySourceLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "GetAggregateStatusOfMessagesLambdaFunction": {
@@ -501,7 +501,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z/redox-serverless-rest-api.zip"
+                "S3Key": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z/redox-serverless-rest-api.zip"
               },
               "FunctionName": "redox-serverless-rest-api-dev-getAggregateStatusOfMessages",
               "Handler": "lambda/message-status-aggregate.handler",
@@ -520,14 +520,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetAggregateStatusOfMessagesLambdaVersiond6H8dnLobVixrQZONmRZKmyAJvT6tu5hErxH5qr3E7A": {
+          "GetAggregateStatusOfMessagesLambdaVersion1lfFW8sBcJqHntb4urskQefwTrwtE4sa40QoXAXU8g": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetAggregateStatusOfMessagesLambdaFunction"
               },
-              "CodeSha256": "044tCKvEDPzprY28qCamoU1QTfAF51KcNSxqyFsVf+8="
+              "CodeSha256": "OYyZOCLSAR+M2vWpYT41VYm+GTKBzh/tH2daHEh6Onc="
             }
           },
           "ApiGatewayRestApi": {
@@ -1288,7 +1288,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1555628140388": {
+          "ApiGatewayDeployment1555637643477": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1747,55 +1747,55 @@
           "ListSourceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListSourceLambdaVersionTFBYOAmG1rTk36OcPY3uJpBhsa6CM2eItqxgweSSM"
+              "Ref": "ListSourceLambdaVersionjNcJNBrBG0ws61ryiHMYUkWoWWcZ6PE0gw04jBswTIg"
             }
           },
           "GetSourceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetSourceLambdaVersioniB0TvqrtZydbUGx2WKsqWa1VyyR8TgXoskMzmkuPLc"
+              "Ref": "GetSourceLambdaVersionAq5BsgMxsFlEcRqtZ5O7wR5bb8dHqMAH0j7cofHI"
             }
           },
           "CreateSourceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateSourceLambdaVersion7X5nmuvyNwJEaQscRfrNCwnWTonYVqV1IytIqBVc"
+              "Ref": "CreateSourceLambdaVersion2GonoYV2VVUhKDk87aUNt79aPJaDvmen7hsZILNvu4"
             }
           },
           "UpdateSourceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateSourceLambdaVersionLPEeWW5u0hmzkf9qeJQ5RgEoTvmRvAOiSCgYmOkNKY"
+              "Ref": "UpdateSourceLambdaVersionFenH8bqqzyJ87oQ7acaSxqdjxqsOs8gyWnDAP6EBM"
             }
           },
           "DeleteSourceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteSourceLambdaVersion7d5KiaDDo77ahUM3RAMc6DvR0gbH2yk9PuzhDv8zwI"
+              "Ref": "DeleteSourceLambdaVersion0GOVj1dAlWGyYhSN5M700yZRqAUvamfVYpcH6lZ9E8"
             }
           },
           "ListMessageLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListMessageLambdaVersionW5Z7eKqmYGc1FWVwdleFZn7YPKwozIQTS8btS1GNxDM"
+              "Ref": "ListMessageLambdaVersionGZGRU3iwzJgE160FhlonTsFg0LoavC5JVn4q49NCkM"
             }
           },
           "GetMessageLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetMessageLambdaVersionWxtnUhYEdlPfEKaXJvYUba8SfEYcoFRzhw5YX1Yrw"
+              "Ref": "GetMessageLambdaVersionLSkhet0g6SuwkdW5tCEQ2JEGmeH6NP82DSJ3gN1YJ0U"
             }
           },
           "GetMessageBySourceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetMessageBySourceLambdaVersionOtbXsmJaFhaD3c1rvcseMSRP4jdsNvfk067ysVYi5N8"
+              "Ref": "GetMessageBySourceLambdaVersionzoxVgPrZUcCk98DTse767PnSmcLrPtjmMAJkmBH7hhg"
             }
           },
           "GetAggregateStatusOfMessagesLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetAggregateStatusOfMessagesLambdaVersiond6H8dnLobVixrQZONmRZKmyAJvT6tu5hErxH5qr3E7A"
+              "Ref": "GetAggregateStatusOfMessagesLambdaVersion1lfFW8sBcJqHntb4urskQefwTrwtE4sa40QoXAXU8g"
             }
           },
           "ServiceEndpoint": {
@@ -2191,7 +2191,7 @@
     "artifact": "/home/ec2-user/environment/take-home/api/.serverless/redox-serverless-rest-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/redox-serverless-rest-api/dev/1555628155534-2019-04-18T22:55:55.534Z",
+    "artifactDirectoryName": "serverless/redox-serverless-rest-api/dev/1555637652230-2019-04-19T01:34:12.230Z",
     "artifact": "redox-serverless-rest-api.zip"
   }
 }
