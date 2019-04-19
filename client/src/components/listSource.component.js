@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import request from 'request';
 import { Link } from 'react-router-dom';
-
-const uri = 'http://localhost:3000/source'
-//remote: https://aj0cogumb8.execute-api.us-east-1.amazonaws.com/dev/source/
-//local: http://localhost:3000/source
+import config from '../config';
 
 export default class ListSource extends Component {
     
@@ -14,7 +11,7 @@ export default class ListSource extends Component {
     }
     
     componentDidMount() {
-      request.get(uri, (error, response, body) => {
+      request.get(config.url, (error, response, body) => {
             if (error) {
                 console.log(error)
             }
