@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Auth } from "aws-amplify";
 
 export default class Login extends Component {
     constructor(props) {
@@ -10,8 +11,15 @@ export default class Login extends Component {
       };
     }
   
-    handleSubmit = e => {
+    handleSubmit = async e => {
         e.preventDefault();
+
+        try {
+            await Auth.signIn(this.state.email, this.state.password);
+            alert("Logged in");
+          } catch (e) {
+            alert(e.message);
+          }
 
       }
 
