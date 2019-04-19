@@ -1,12 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Auth } from "aws-amplify";
 
-import AppliedRoute from './components/appliedRoute.component';
-
-import ListSource from './components/listSource.component';
-import ViewSource from './components/viewSource.component';
-import Login from './components/login.component';
+import Routes from "./Routes";
 
 
 class App extends Component {
@@ -36,8 +32,10 @@ class App extends Component {
     this.setState({ isAuthenticated: authenticated });
   }
 
-  handleLogout = event => {
+  handleLogout = async e => {
+    await Auth.signOut();
     this.userHasAuthenticated(false);
+    this.props.history.push("/login");
   }
 
   render() {
@@ -49,25 +47,19 @@ class App extends Component {
 
     return (
       !this.state.isAuthenticating &&
-      <Router childProps={childProps}>
-        <div>
-          <Link to={'/'} >Home</Link>&nbsp;&nbsp;
-            {this.state.isAuthenticated
-            ? <span style={ logoutStyle } onClick={this.handleLogout}>Logout</span>
-            : <Fragment>
-                <Link to="/signup">Signup</Link>&nbsp;&nbsp;
-                <Link to="/login">Login</Link>
-              </Fragment>
-            }
-          <Switch>
-              <AppliedRoute exact path='/' component={ ListSource } props={childProps}/>
-              <AppliedRoute path='/view/:id' component={ ViewSource } props={childProps}/>
-              <AppliedRoute path='/login' component={ Login } props={childProps}/>
-          </Switch>
-        </div>
-      </Router>
+      <div>
+        <Link to={'/'} >Home</Link>&nbsp;&nbsp;
+          {this.state.isAuthenticated
+          ? <span style={ logoutStyle } onClick={this.handleLogout}>Logout</span>
+          : <Fragment>
+              <Link to="/signup">Signup</Link>&nbsp;&nbsp;
+              <Link to="/login">Login</Link>
+            </Fragment>
+          }
+        <Routes childProps={childProps} />
+      </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
