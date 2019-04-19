@@ -11,7 +11,7 @@ export default class ListSource extends Component {
     }
     
     componentDidMount() {
-      request.get(config.url, (error, response, body) => {
+      request.get(config.apiGateway.URL + '/source', (error, response, body) => {
             if (error) {
                 console.log(error)
             }

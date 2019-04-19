@@ -23,7 +23,7 @@ export default class ViewSource extends Component {
     }
 
   componentDidMount() {
-      request.get(config.url + '/' + this.props.match.params.id, (error, response, body) => {
+      request.get(config.apiGateway.URL + '/source/' + this.props.match.params.id, (error, response, body) => {
             if (error) {
                 console.log(error)
             } else {
@@ -36,7 +36,7 @@ export default class ViewSource extends Component {
             }
         })
         .pipe(
-            request.get(config.url + '/' + this.props.match.params.id + '/message', (error, response, body) => {
+            request.get(config.apiGateway.URL + '/source/' + this.props.match.params.id + '/message', (error, response, body) => {
             if (error) {
                 console.log(error)
             }
@@ -50,7 +50,7 @@ export default class ViewSource extends Component {
             }
         }))
         .pipe(
-            request.get(config.url + '/' + this.props.match.params.id + '/message/statusAggregate', (error, response, body) => {
+            request.get(config.apiGateway.URL + '/source/' + this.props.match.params.id + '/message/statusAggregate', (error, response, body) => {
             if (error) {
                 console.log(error)
             }
