@@ -4,6 +4,7 @@ import request from 'request';
 import config from '../config';
 
 export default class CreateSource extends Component {
+    _isMounted = false;
     
     constructor(props) {
       super(props);
@@ -18,6 +19,27 @@ export default class CreateSource extends Component {
           encoding: ''
       }
     }
+
+    componentDidMount() {
+        this._isMounted = true;
+        request.get(config.url + '/' + this.props.match.params.id, (error, response, body) => {
+              if (error) {
+                  console.log(error)
+              } else {
+                  const src = JSON.parse(body)[0]
+                  this.setState({
+                      name: src['name'],
+                      environment: src['environment'],
+                      encoding: src['encoding']
+                  })
+              }
+          })
+        }
+    
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
   
   onChangeName(e) {
     this.setState({
@@ -46,10 +68,10 @@ export default class CreateSource extends Component {
             }
         
         var options = {
-          method: 'post',
+          method: 'put',
           body: payload,
           json: true,
-          url: config.url
+          url: config.url + '/' + this.props.match.params.id,
         }
   
         request(options, (error, response, body) => {
@@ -57,25 +79,17 @@ export default class CreateSource extends Component {
                 console.log(error)
             }
             else {
-                console.log('successfully posted payload')
-                //Reset state
-                this.setState({
-                  name: '',
-                  environment: '',
-                  encoding: ''
-                })
+                console.log('successfully updated source')
                 this.props.history.push('/');
             }
         });
-        
-        
 
     }
   
     render() {
         return (
             <div>
-                <h1>Create New Source</h1>
+                <h1>Update Source</h1>
                 <form onSubmit={this.onSubmit}>
                     <p>Name</p>
                     <input onChange={this.onChangeName} value={this.state.name}/>

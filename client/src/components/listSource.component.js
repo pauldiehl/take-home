@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import config from '../config';
 
 export default class ListSource extends Component {
-    
+  _isMounted = false;  
+
     constructor() {
       super();
       this.state = {source: []};
     }
     
     componentDidMount() {
+      this._isMounted = true;
       request.get(config.url, (error, response, body) => {
             if (error) {
                 console.log(error)
@@ -19,6 +21,10 @@ export default class ListSource extends Component {
                 this.setState({ source: JSON.parse(body)})
             }
         });
+    }
+
+    componentWillUnmount() {
+      this._isMounted = false;
     }
     
     addSourceList() {

@@ -3,8 +3,10 @@ import request from 'request';
 import SourceDetails from './sourceDetails.component'
 import MessageStatusAggregates from './messageStatusAggregates.component'
 import config from '../config';
+import { Link } from 'react-router-dom';
 
 export default class ViewSource extends Component {
+    _isMounted = false;
     
     constructor(props) {
         super(props);
@@ -22,6 +24,7 @@ export default class ViewSource extends Component {
     }
 
   componentDidMount() {
+    this._isMounted = true;
       request.get(config.url + '/' + this.props.match.params.id, (error, response, body) => {
             if (error) {
                 console.log(error)
@@ -67,6 +70,10 @@ export default class ViewSource extends Component {
         }))
     }
     
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     addMessageList() {
          return this.state.messages.map( (msg) => {
           return (
@@ -75,8 +82,22 @@ export default class ViewSource extends Component {
       });
     }
 
-    
+    deleteSource(id){
+        return () => {
+            request.delete(config.url + '/' + id, (error, response, body) => {
+            if (error) {
+                console.log(error)
+            }
+            else {
+                console.log('successfully deleted source')
+                this.props.history.push('/');
+            }
+            });
+        }
+    }
+        
     render() {
+        const style = {cursor: 'pointer', color: 'blue', textDecoration: 'underline' }
         return (
             <div>
                 <SourceDetails 
@@ -84,6 +105,10 @@ export default class ViewSource extends Component {
                     environment={this.state['environment']}
                     encoding= {this.state['encoding']}
                 />
+
+                <Link to={'/edit/' + this.props.match.params.id} >Update Source</Link> &nbsp; &nbsp;
+                <span style={style} onClick={this.deleteSource(this.props.match.params.id)}>Delete</span>
+
                 <MessageStatusAggregates
                     errorCount={this.state['errorCount']}
                     enqueuedCount={this.state['enqueuedCount']}
