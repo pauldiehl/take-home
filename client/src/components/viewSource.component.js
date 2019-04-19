@@ -17,7 +17,8 @@ export default class ViewSource extends Component {
           enqueuedCount: '',
           processingCount: '',
           finishedCount: '',
-          messages: []
+          messages: [],
+          loading: true
         }
     }
 
@@ -61,6 +62,7 @@ export default class ViewSource extends Component {
                         enqueuedCount: aggregates.enqueuedCount,
                         processingCount: aggregates.processingCount,
                         finishedCount: aggregates.finishedCount,
+                        loading: false
                     }
                 )
             }
@@ -77,6 +79,14 @@ export default class ViewSource extends Component {
 
     
     render() {
+        if(this.state.loading) { 
+            return (
+                <div>
+                    <p>Loading Page ...</p>
+                </div>
+            )
+        }
+
         return (
             <div>
                 <SourceDetails 
