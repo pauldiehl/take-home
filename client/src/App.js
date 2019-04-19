@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Auth } from "aws-amplify";
 
 import AppliedRoute from './components/appliedRoute.component';
 
@@ -13,8 +14,22 @@ class App extends Component {
     super(props);
   
     this.state = {
-      isAuthenticated: false
+      isAuthenticated: false,
+      isAuthenticating: true
     };
+  }
+
+  async componentDidMount() {
+    try {
+      await Auth.currentSession();
+      this.userHasAuthenticated(true);
+    }
+    catch(e) {
+      if (e !== 'No current user') {
+        alert(e);
+      }
+    }
+    this.setState({ isAuthenticating: false });
   }
   
   userHasAuthenticated = authenticated => {
@@ -33,6 +48,7 @@ class App extends Component {
     const logoutStyle = {cursor: 'pointer', color: 'blue', textDecoration: 'underline'}
 
     return (
+      !this.state.isAuthenticating &&
       <Router childProps={childProps}>
         <div>
           <Link to={'/'} >Home</Link>&nbsp;&nbsp;
