@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import ListSource from './components/listSource.component';
 import ViewSource from './components/viewSource.component';
+import Login from './components/login.component';
+
 
 class App extends Component {
   render() {
@@ -13,6 +15,7 @@ class App extends Component {
           <Switch>
               <Route exact path='/' component={ ListSource } />
               <Route path='/view/:id' component={ ViewSource } />
+              <Route path='/login' component={ Login } />
           </Switch>
         </div>
       </Router>
