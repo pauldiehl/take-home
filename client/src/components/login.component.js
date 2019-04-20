@@ -6,6 +6,7 @@ export default class Login extends Component {
       super(props);
   
       this.state = {
+        isLoading: false,
         email: "",
         password: ""
       };
@@ -14,12 +15,15 @@ export default class Login extends Component {
     handleSubmit = async e => {
         e.preventDefault();
 
+        this.setState({ isLoading: true });
+
         try {
             await Auth.signIn(this.state.email, this.state.password);
             this.props.userHasAuthenticated(true);
             this.props.history.push("/");
           } catch (e) {
             alert(e.message);
+            this.setState({ isLoading: false });
           }
 
       }
@@ -44,7 +48,7 @@ export default class Login extends Component {
             <input type="password" value={this.state.password} onChange={this.handleChange} id="password" />
             <br />
             <br />
-            <input type="submit" value="LOGIN" disabled={!this.validateFields()}/>
+            {!this.state.isLoading ? <input type="submit" value="LOGIN" disabled={!this.validateFields()}/> : "Loading..."}
           </form>
         </div>
       );
