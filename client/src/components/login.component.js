@@ -22,6 +22,11 @@ export default class Login extends Component {
             this.props.userHasAuthenticated(true);
           } catch (e) {
             alert(e.message);
+            if (e.code == "UserNotConfirmedException") {
+                console.log(e)
+                // handle users not code verified
+                // this.props.history.push("/signup");
+            }
             this.setState({ isLoading: false });
           }
 
