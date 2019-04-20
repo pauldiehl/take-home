@@ -20,7 +20,6 @@ export default class Login extends Component {
         try {
             await Auth.signIn(this.state.email, this.state.password);
             this.props.userHasAuthenticated(true);
-            this.props.history.push("/");
           } catch (e) {
             alert(e.message);
             this.setState({ isLoading: false });
@@ -40,7 +39,7 @@ export default class Login extends Component {
   
     render() {
       return (
-        <div className="Login">
+        <div>
           <form onSubmit={this.handleSubmit}>
             <p>Email</p>
             <input type="email" value={this.state.email} onChange={this.handleChange} id="email" />

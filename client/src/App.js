@@ -50,7 +50,10 @@ class App extends Component {
       <div>
         <Link to={'/'} >Home</Link>&nbsp;&nbsp;
           {this.state.isAuthenticated
-          ? <span style={ logoutStyle } onClick={this.handleLogout}>Logout</span>
+          ? <Fragment>
+              <Link to="/sources">Source List</Link>&nbsp;&nbsp;
+              <span style={ logoutStyle } onClick={this.handleLogout}>Logout</span>
+            </Fragment>
           : <Fragment>
               <Link to="/signup">Signup</Link>&nbsp;&nbsp;
               <Link to="/login">Login</Link>
